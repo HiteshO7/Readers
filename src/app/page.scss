@@ -1,0 +1,230 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #f4f4f4;
+$border-color: #ddd;
+$hover-color: #e74c3c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 50px;
+  height: 60px;
+  width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-div {
+  background-color: rgba(10, 10, 10, 0.5);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.search-input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: black;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  .filter {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select {
+      padding: 0.5rem;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      outline: none;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid $border-color;
+    border-top: 5px solid $primary-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cards Section */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 2rem;
+  transition: all 0.3s ease;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .card {
+    z-index: 2;
+    background-color: rgba(120, 120, 120, 0.2);
+    perspective: 1000px;
+    letter-spacing: 0.25px;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-left: 2px solid rgba(60, 60, 60, 0.8);
+    border-top: 2px solid rgba(60, 60, 60, 0.8);
+    cursor: pointer;
+    /* Default card size (1x1) */
+    transform: scale(1);
+    opacity: 0.9;
+
+    /* Content visibility */
+    .card-content {
+      display: block;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.3s, max-height 0.3s;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #333;
+
+      strong {
+        color: $primary-color;
+      }
+    }
+
+    .links {
+      margin-top: 1rem;
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+
+        li {
+          margin: 0.5rem 0;
+        }
+
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    /* When the card expands (2x2) */
+    &.expanded {
+      grid-column: span 2;
+      grid-row: span 2;
+      transform: scale(1.5); /* Enlarging the card */
+      opacity: 1;
+      .card-content {
+        opacity: 1;
+        max-height: 500px; /* Show full content when expanded */
+      }
+    }
+
+    /* When card is in 1x1 state */
+    &:not(.expanded) .card-content {
+      opacity: 0.5; /* Show limited content */
+      max-height: 40px; /* Hide some content */
+    }
+
+    /* Hover effect for cards in 1x1 state */
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba(120, 120, 120, 0.3);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.header {
+    backdrop-filter: blur(10px); /* Apply blur effect to background */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 60px;
+    position: sticky;
+    top: 0; /* Ensure it sticks to the top of the screen */
+
+    z-index: 10; /* Optional: Makes sure the header stays above other content */
+
+    @media (max-width: 720px) {
+        padding: 0px 10px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+
+        .codeby {
+            flex: 1;
+            text-align: left;
+            font-size: 22px;
+
+            @media (max-width: 580px) {
+                font-size: 12px;
+            }
+        }
+
+        .title {
+            flex: 1;
+            text-align: center;
+            font-size: 26px;
+
+            @media (max-width: 720px) {
+                font-size: 22px;
+            }
+        }
+
+        .menu {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Aligns the image to the right */
+            text-align: right;
+
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+
+                @media (max-width: 720px) {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                @media (max-width: 580px) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

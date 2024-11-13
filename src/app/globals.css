@@ -15,7 +15,13 @@
 }
 
 body {
-  color: var(--foreground);
+  color: white;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent black background */
+  background-image: url('/grain.gif');   /* Background GIF */
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-blend-mode: multiply;
 }

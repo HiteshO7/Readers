@@ -1,0 +1,19 @@
+authors: Will Bengtson
+name: AWS IMDSv2 enforcement
+categories: Configuration
+functions: Security
+resources: EC2
+maturity: Medium
+csps: AWS
+applies: Always
+summary: Protect AWS credentials from SSRD vectors by enforcing AWS IMDSv2
+how_to:
+description: |
+  This is a best practice and will save you a ton in response and remediation for SSRD vulnerabilities.
+  The main value is protecting AWS credentials from SSRF vectors which you are bound to be exposed to at some point.
+  Just do it always assuming the vendor software you run on your servers support it.
+  
+  Enforce the use of the IMDSv2 to mitigate risk of credential exposure via SSRF
+links:
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html#recommended-path-for-requiring-imdsv2
+  - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples_ec2.html#example-ec2-2

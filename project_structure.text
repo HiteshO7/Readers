@@ -1,0 +1,101 @@
+- .eslintrc.json
+- .gitignore
+- jsconfig.json
+- next.config.mjs
+- package-lock.json
+- package.json
+- postcss.config.mjs
+- project_structure.text
+- public
+  - grain.gif
+  - menu-hamburger.png
+- README.md
+- src
+  - app
+    - api
+      - yamlData
+        - route.js
+    - components
+      - Header
+        - Header.jsx
+        - style.module.scss
+    - favicon.ico
+    - fonts
+      - GeistMonoVF.woff
+      - GeistVF.woff
+    - globals.css
+    - layout.jsx
+    - Page.jsx
+  - data
+    - account_segmentation.yaml
+    - account_size _small.yaml
+    - acount_per_region.yaml
+    - alternate_account_contacts.yaml
+    - approval_for_resource_changes.yaml
+    - approval_for_sensitive_network_access.yaml
+    - avoid_reliance_on_cp_calls_during_issues.yaml
+    - aws_imdsv2_enforcement.yaml
+    - aws_presigned_url_vigilance.yaml
+    - base_image_use.yaml
+    - breakglass_ssh.yaml
+    - broad_permission_guardrails.yaml
+    - centralize_cloudtrail_logging.yaml
+    - change_window.yaml
+    - cloudfront_oai_usage.yaml
+    - cloudfront_verbs_matter.yaml
+    - cloudwatch_log_group_ttl.yaml
+    - cloud_tagging_standards.yaml
+    - customized_base_images.yaml
+    - databackup_account.yaml
+    - defend_against_subdomain_takeover.yaml
+    - delegated_accounts_admins.yaml
+    - delete_unused_iam_access_keys.yaml
+    - deploy_in_multiple_azs.yaml
+    - dynamodb_backup_configured.yaml
+    - ebs_volume_encryption_at_account_level.yaml
+    - enable_lb_logging.yaml
+    - explicity_chose_what_aws_services_to_allow.yaml
+    - guardrails_to_prevent_removal_of_security_services_tooling.yaml
+    - iam_service_users_assume_role.yaml
+    - image_used_has_recent_inspector_vulnerability_scan.yaml
+    - infrastructure_code_review_process.yaml
+    - instances_must_be_launched_in_autoscaling_group.yaml
+    - limit_iam_users.yaml
+    - limit_public_ip_addresses.yaml
+    - limit_service_account_owner_access.yaml
+    - minimize_golden_os_base_container_images.yaml
+    - mpa_for_prod_changes.yaml
+    - naming_convention_for_buckets.yaml
+    - oidc_integration_for_popular_services.yaml
+    - organization_perimeter.yaml
+    - outbound_traffic_is_routed_through_managed_edge_components.yaml
+    - prefer_cdn_fronted_private_buckets_for_serving_static_assets.yaml
+    - protected_accounts_regions.yaml
+    - protect_against_cross_account_confused_deputy.yaml
+    - protect_against_data_deletion.yaml
+    - public_access_block.yaml
+    - public_resource_exposure.yaml
+    - rds_databases_encrypted.yaml
+    - rds_databases_with_automatic_daily_snapshot.yaml
+    - resource_inventory.yaml
+    - restrict_oidc_integrations.yaml
+    - restrict_what_regions_you_run_in.yaml
+    - root_mfa-enable_mfa_on_root_account.yaml
+    - rotate_iam_access_keys.yaml
+    - s3_bucket_replication.yaml
+    - s3_bucket_with_lifecycle.yaml
+    - s3_bucket_with_replication_to_another_account.yaml
+    - s3_bucket_with_versioning.yaml
+    - scp_on_security_resources.yaml
+    - searchable_cloudtrail_logs.yaml
+    - test_your_backups_through_restoring_them.yaml
+    - uniform_bucket_level_access.yaml
+    - use_app_specific_roles.yaml
+    - use_central_identity_account.yaml
+    - use_reserved_concurrency_limits_on_lambdas_by_default.yaml
+    - use_sso_for_user_access.yaml
+    - use_systemsmanager_if_you_need_to_ssh.yaml
+    - waf_for_external_services.yaml
+  - utils
+    - readYaml.js
+- tailwind.config.js
