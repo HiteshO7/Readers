@@ -1,4 +1,3 @@
-// Mark the file as a client component
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -81,7 +80,7 @@ export default function Page() {
             </div>
             <input
               type="text"
-              placeholder="Search by author"
+              placeholder="Search by author....."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="search-input"
@@ -146,8 +145,15 @@ export default function Page() {
                 className={`card ${selectedCard === index ? 'expanded' : ''}`}
                 onClick={() => toggleCard(index)}
               >
+                <div className="glow-border"></div> {/* Glow effect element */}
+                {item.content.name && <p><strong>Name:</strong> {item.content.name}</p>}
                 <p><strong>Authors:</strong> {item.content.authors || 'N/A'}</p>
                 {item.content.maturity && <p><strong>Maturity:</strong> {item.content.maturity}</p>}
+
+                {item.content.functions && <p><strong>Functions:</strong> {item.content.functions}</p>}
+                {item.content.categories && <p><strong>Categories:</strong> {item.content.categories}</p>}
+                {item.content.functions && <p><strong>Functions:</strong> {item.content.functions}</p>}
+                    {item.content.resources && <p><strong>Resources:</strong> {item.content.resources}</p>}
                 {/* Additional content only shown if card is expanded */}
                 {selectedCard === index && (
                   <>
@@ -156,7 +162,7 @@ export default function Page() {
                     {item.content.resources && <p><strong>Resources:</strong> {item.content.resources}</p>}
                     {item.content.csps && <p><strong>Cloud Service Providers:</strong> {item.content.csps}</p>}
                     <p><strong>Summary:</strong> {item.content.summary || 'N/A'}</p>
-                    <p><strong>Description:</strong> {item.content.description || 'N/A'}</p>
+                    <p><strong>Description:</strong> {item.content.description || 'N/A'}</p>    
                     {item.content.links && item.content.links.length > 0 && (
                       <div className="links">
                         <strong>Useful Links:</strong>

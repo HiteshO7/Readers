@@ -3,6 +3,7 @@ $secondary-color: #2ecc71;
 $background-color: #f4f4f4;
 $border-color: #ddd;
 $hover-color: #e74c3c;
+$strong-color: rgba(52, 152, 219,.9);
 
 * {
   margin: 0;
@@ -13,7 +14,28 @@ $hover-color: #e74c3c;
 .container {
   width: 90%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 10rem;
+  @media (max-width:1400px) {
+    padding: 3rem 3 rem;
+  }
+  @media (max-width:1200px) {
+    padding: 3rem 2rem;
+  }
+  @media (max-width:920px) {
+    padding: 3rem 8rem;
+  }
+  @media (max-width:840px) {
+    padding: 3rem 7rem;
+  }
+  @media (max-width:720px) {
+    padding: 3rem 5rem;
+  }
+  @media (max-width:540px) {
+    padding: 3rem 3rem;
+  }
+  @media (max-width:420px) {
+    padding: 3rem 1rem;
+  }
 }
 
 .search-container {
@@ -27,17 +49,39 @@ $hover-color: #e74c3c;
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(120, 120, 120, 0.2);
   padding: 5px 10px;
   border-radius: 50px;
   height: 60px;
-  width: 400px;
+  width: 450px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width:1200px) {
+    width: 400px;
+  }
+  @media (max-width:1000px) {
+    width: 400px;
+  }
+  @media (max-width:920px) {
+    width: 400px;
+  }
+  @media (max-width:860px) {
+    width: 400px;
+  }
+  @media (max-width:720px) {
+    width: 400px;
+  }
+  @media (max-width:540px) {
+    width: 400px;
+  }
+  @media (max-width:420px) {
+    width: 400px;
+  }
 }
 
 .image-div {
-  background-color: rgba(10, 10, 10, 0.5);
+  background-color: rgba(10, 10, 10, 0);
   height: 50px;
   width: 50px;
   display: flex;
@@ -47,25 +91,30 @@ $hover-color: #e74c3c;
 }
 
 .search-icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .search-input {
   padding: 8px;
   border: none;
   outline: none;
+  color: rgba(180, 180, 180, 0.9);
   background-color: transparent;
   border-radius: 4px;
+  font-size: 20px;
   width: 100%;
   max-width: 300px;
+
+  &::placeholder {
+    color: rgba(180, 180, 180, 0.3);
+  }
 }
 
 .filters {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  color: black;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 
@@ -73,25 +122,33 @@ $hover-color: #e74c3c;
     width: 120px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     label {
       margin-bottom: 0.3rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: bold;
-      color: #333;
+      color: rgba(120, 120, 120, 0.9);
     }
 
     select {
       padding: 0.5rem;
-      border: 1px solid $border-color;
+      border: 1px solid rgba(120, 120, 120, 0.3);
       border-radius: 5px;
       outline: none;
       font-size: 0.7rem;
       cursor: pointer;
+      background-color: rgba(120, 120, 120, 0.2);
       transition: all 0.3s;
 
+      option {
+        background-color: rgba(120, 120, 120, 0.5);
+        color: #333;
+      }
+
       &:focus {
-        border-color: transparent;
+        border-color: $primary-color;
+        background-color: rgba(120, 120, 120, 0.2);
       }
     }
   }
@@ -125,106 +182,107 @@ $hover-color: #e74c3c;
 /* Cards Section */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   transition: all 0.3s ease;
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* 1 column */
+    grid-template-columns: 1fr; /* For smaller screens, one card per row */
   }
 
-  .card {
-    z-index: 2;
-    background-color: rgba(120, 120, 120, 0.2);
-    perspective: 1000px;
-    letter-spacing: 0.25px;
-    border-radius: 1rem;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, background-color 0.3s;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    border-left: 2px solid rgba(60, 60, 60, 0.8);
-    border-top: 2px solid rgba(60, 60, 60, 0.8);
-    cursor: pointer;
-    /* Default card size (1x1) */
-    transform: scale(1);
-    opacity: 0.9;
+  /* New addition: When screen width is below 920px */
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr; /* Cards in one column */
+    gap: 1rem; /* Adjust gap between cards */
+  }
+}
 
-    /* Content visibility */
-    .card-content {
-      display: block;
-      opacity: 0;
-      max-height: 0;
-      transition: opacity 0.3s, max-height 0.3s;
+.card {
+  z-index: 2;
+  background-color: rgba(120, 120, 120, 0.2);
+  perspective: 1000px;
+  letter-spacing: 0.25px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-left: 2px solid rgba(60, 60, 60, 0.8);
+  border-top: 2px solid rgba(60, 60, 60, 0.8);
+  cursor: pointer;
+  transform: scale(1);
+  opacity: 0.9;
+
+  .card-content {
+    display: block;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.3s;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: rgba(200, 200, 200, .9);
+
+    strong {
+      color: $strong-color;
     }
+  }
 
-    p {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      color: #333;
+  .links {
+    margin-top: 1rem;
 
-      strong {
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+
+      li {
+        margin: 0.5rem 0;
+      }
+
+      a {
         color: $primary-color;
-      }
-    }
-
-    .links {
-      margin-top: 1rem;
-
-      ul {
-        list-style-type: disc;
-        padding-left: 1.5rem;
-
-        li {
-          margin: 0.5rem 0;
-        }
-
-        a {
-          color: $primary-color;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
+  }
 
-    /* When the card expands (2x2) */
-    &.expanded {
-      grid-column: span 2;
-      grid-row: span 2;
-      transform: scale(1.5); /* Enlarging the card */
+  &.expanded {
+    grid-column: span 2;
+    grid-row: span 2;
+    opacity: 1;
+
+    .card-content {
       opacity: 1;
-      .card-content {
-        opacity: 1;
-        max-height: 500px; /* Show full content when expanded */
-      }
+      max-height: 500px;
     }
+  }
 
-    /* When card is in 1x1 state */
-    &:not(.expanded) .card-content {
-      opacity: 0.5; /* Show limited content */
-      max-height: 40px; /* Hide some content */
-    }
+  &:not(.expanded) .card-content {
+    opacity: 0.5;
+    max-height: 40px;
+  }
 
-    /* Hover effect for cards in 1x1 state */
-    &:hover {
-      transform: scale(1.05);
-      background-color: rgba(120, 120, 120, 0.3);
-    }
+  &:hover {
+    transform: scale(1.02);
+    background-color: rgba(120, 120, 120, 0.3);
   }
 }

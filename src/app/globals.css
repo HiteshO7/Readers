@@ -7,6 +7,25 @@
   --foreground: #171717;
 }
 
+@font-face {
+    font-family: 'Rosca';
+    src: url('/fonts/rosca.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Rosca-slant';
+    src: url('/fonts/Rosca-slant.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gristela';
+    src: url('/fonts/MoonetdemoRegular-6RnxY.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

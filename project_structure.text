@@ -7,8 +7,12 @@
 - postcss.config.mjs
 - project_structure.text
 - public
+  - fonts
+    - rosca-slant.otf
+    - rosca.otf
   - grain.gif
   - menu-hamburger.png
+  - Search.png
 - README.md
 - src
   - app
@@ -25,7 +29,8 @@
       - GeistVF.woff
     - globals.css
     - layout.jsx
-    - Page.jsx
+    - page.jsx
+    - page.scss
   - data
     - account_segmentation.yaml
     - account_size _small.yaml
