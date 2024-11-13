@@ -162,7 +162,7 @@ export default function Page() {
                     {item.content.resources && <p><strong>Resources:</strong> {item.content.resources}</p>}
                     {item.content.csps && <p><strong>Cloud Service Providers:</strong> {item.content.csps}</p>}
                     <p><strong>Summary:</strong> {item.content.summary || 'N/A'}</p>
-                    <p><strong>Description:</strong> {item.content.description || 'N/A'}</p>    
+                    <p><strong>Description:</strong> {item.content.description || 'N/A'}</p>
                     {item.content.links && item.content.links.length > 0 && (
                       <div className="links">
                         <strong>Useful Links:</strong>
