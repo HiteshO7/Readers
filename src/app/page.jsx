@@ -91,24 +91,22 @@ export default function Page() {
         {/* Filters */}
         <div className="filters">
           <div className="filter">
-            <label>Maturity</label>
             <select
               value={selectedMaturity}
               onChange={(e) => setSelectedMaturity(e.target.value)}
             >
-              <option value="">Select Maturity</option>
+              <option value="">Maturity</option>
               <option value="High">High</option>
               <option value="Medium">Medium</option>
               <option value="Low">Low</option>
             </select>
           </div>
           <div className="filter">
-            <label>Category</label>
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              <option value="">Select Category</option>
+              <option value="">Category</option>
               <option value="Change Management">Change Management</option>
               <option value="Architecture">Architecture</option>
               <option value="Configuration">Configuration</option>
@@ -116,12 +114,11 @@ export default function Page() {
             </select>
           </div>
           <div className="filter">
-            <label>Function</label>
             <select
               value={selectedFunction}
               onChange={(e) => setSelectedFunction(e.target.value)}
             >
-              <option value="">Select Function</option>
+              <option value="">Function</option>
               <option value="Security">Security</option>
               <option value="Reliability">Reliability</option>
               <option value="Standards">Standards</option>
@@ -149,11 +146,9 @@ export default function Page() {
                 {item.content.name && <p><strong>Name:</strong> {item.content.name}</p>}
                 <p><strong>Authors:</strong> {item.content.authors || 'N/A'}</p>
                 {item.content.maturity && <p><strong>Maturity:</strong> {item.content.maturity}</p>}
-
                 {item.content.functions && <p><strong>Functions:</strong> {item.content.functions}</p>}
                 {item.content.categories && <p><strong>Categories:</strong> {item.content.categories}</p>}
-                {item.content.functions && <p><strong>Functions:</strong> {item.content.functions}</p>}
-                    {item.content.resources && <p><strong>Resources:</strong> {item.content.resources}</p>}
+                {item.content.resources && <p><strong>Resources:</strong> {item.content.resources}</p>}
                 {/* Additional content only shown if card is expanded */}
                 {selectedCard === index && (
                   <>
