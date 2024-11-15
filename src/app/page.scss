@@ -14,7 +14,7 @@ $strong-color: rgba(52, 152, 255, 1);
 .line1, .line2 {
     position: absolute;  /* Set height to 100% of the viewport height */
     background-color: #E4EBF1;
-    height: 300%;
+    height: 200%;
     width: 30px;
     box-shadow:
         -10px -10px 30px rgba(255, 255, 255, 1), /* First shadow with white color */
@@ -26,12 +26,12 @@ $strong-color: rgba(52, 152, 255, 1);
   }
 
   .line1 {
-    top: 250px;
+    top: 300px;
     left: 100px;
   }
 
   .line2 {
-    top: 250px;
+    top: 300px;
     right: 100px;
   }
 .container {
